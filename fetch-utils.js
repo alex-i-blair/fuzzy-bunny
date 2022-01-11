@@ -10,15 +10,15 @@ export async function getUser() {
 export async function getFamilies() {
     // fetch all families and their bunnies
     const response = await client
-        .from('families')
-        .select(`*, bunnies (*)`);
+        .from('loving_families')
+        .select(`*, fuzzy_bunnies (*)`);
     return checkError(response);    
 }
 
 export async function deleteBunny(id) {
     // delete a single bunny using the id argument
     const response = await client
-        .from('bunnies')
+        .from('fuzzy_bunnies')
         .delete()
         .match({ id: id })
         .single();
@@ -29,8 +29,8 @@ export async function deleteBunny(id) {
 export async function createBunny(bunny) {
     // create a bunny using the bunny argument
     const response = await client
-        .from('families')
-        .insert(bunny);
+        .from('fuzzy_bunnies')
+        .insert([bunny]);
     return checkError(response);    
 }
 

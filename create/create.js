@@ -20,10 +20,10 @@ form.addEventListener('submit', async e => {
     // use createBunny to create a bunny with this name and family id
     await createBunny({
         name,
-        id,
+        family_id: id
     });
 
-    // window.location.href = '../families';
+    window.location.href = '../families';
     form.reset();
 });
 
