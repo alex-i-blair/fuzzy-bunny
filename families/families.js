@@ -58,7 +58,7 @@ async function displayFamilies() {
     // append the bunniesEl and nameEl to the familyEl
 
     // append the familyEl to the familiesEl
-}
+    }
 }
 
 window.addEventListener('load', async() => {
